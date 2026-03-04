@@ -1,15 +1,14 @@
 import './App.css'
+import CountInProgress from './Components/CountInProgress'
 import Navbar from './Components/Navbar'
 
 function App() {
 
   return (
-    <>
-    <Navbar />
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
+    <div className=' border h-screen'>
+      <Navbar />
+      <CountInProgress />
+    </div>
   )
 }
 

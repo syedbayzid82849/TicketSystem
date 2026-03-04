@@ -40,16 +40,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 <button
                     onClick={onNewTicket}
-                    style={{
-                        background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
-                        color: "#fff",
-                        border: "none",
-                        borderRadius: 8,
-                        padding: "10px",
-                        fontWeight: 700,
-                        fontSize: 14,
-                        cursor: "pointer",
-                    }}
+                    className="bg-gradient-to-br from-indigo-500 to-purple-500 text-white rounded-md px-4 py-2 font-bold text-sm cursor-pointer"
                 >
                     + New Ticket
                 </button>
