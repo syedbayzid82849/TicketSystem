@@ -1,7 +1,7 @@
 
 function CountInProgress() {
   return (
-    <section className="container mx-auto m-20 flex justify-c gap-2 border">
+    <section className="container mx-auto m-20 flex justify-c gap-2">
       <div
         className="relative flex-1 bg-gradient-to-br from-indigo-500 to-purple-500 text-white rounded-md font-bold text-sm cursor-pointer"
       >
