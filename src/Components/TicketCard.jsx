@@ -10,7 +10,7 @@ const TicketCard = ({ ticket, cardClicked }) => {
                 setClickedTicket(true)
                 cardClicked(ticket)
             }}
-            className="bg-white rounded-xl cursor-pointer shadow-md p-2 hover:shadow-lg transition duration-300"
+            className="bg-white rounded-xl overflow-hidden cursor-pointer shadow-md p-2 hover:shadow-lg transition duration-300"
         >
 
             <div className="flex justify-between items-center mb-2">
@@ -19,7 +19,7 @@ const TicketCard = ({ ticket, cardClicked }) => {
                 </h3>
                 {
                     clickedTicket ?
-                        <span className="bg-[#FEBB0C] text-[#9C7700] px-2 rounded-4xl">
+                        <span className="bg-[#FEBB0C] text-[#9C7700] px-2 rounded-4xl whitespace-nowrap">
                             In-Progress
                         </span> :
                         <span className="bg-[#dcfce7] px-2 rounded-4xl">
