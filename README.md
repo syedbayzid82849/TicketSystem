@@ -1,16 +1,49 @@
-# React + Vite
+# Ticket System 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based Customer Support Zone to display, track, and resolve customer tickets.
+- **Live Link:** [Live Link](https://online-ticket-system.netlify.app/)
+- **GitHub:** [GitHub Link](https://github.com/syedbayzid82849/TicketSystem.git)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ❓ Assignment Questions
 
-## React Compiler
+**1. What is JSX, and why is it used?**
+JSX (JavaScript XML) its allow to write HTML-like code inside JavaScript in React.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**2. What is the difference between State and Props?**
+State: 
+1. Component’s own data
+2. Can change/update
+Props:
+1. Data passed from parent to child
+2. Read-only (cannot change)
 
-## Expanding the ESLint configuration
+**3. What is the useState hook, and how does it work?**
+useState is a React Hook used to create and update state in a component.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**4. How can you share state between components in React?**
+Keep the state in the parent component and pass it to child components using props.
+Flow:
+Parent → Props → Child
+
+**5. How is event handling done in React?**
+React handles events using event handler functions.
+```jsx
+<button onClick={() => handleComplete(ticket)}>Complete</button>
+```
+
+
+---
+
+## 🛠️ Tech Stack
+React.js · Vite · Tailwind CSS · JavaScript
+
+---
+
+## ⚙️ Getting Started
+
+```bash
+git clone https://github.com/syedbayzid82849/TicketSystem.git
+cd TicketSystem
+npm install
+npm run dev
