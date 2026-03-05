@@ -62,7 +62,7 @@ export default function TicketsAndStatusSection({ ticketsPromise }) {
 
         {/* RIGHT SIDE - Task Status */}
         <div className="bg-gray-50 rounded-2xl p-6 relative overflow-hidden shadow-sm">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">
+          <h2 className="text-xl font-bold text-gray-700 mb-4">
             Task Status
           </h2>
 
@@ -83,7 +83,7 @@ export default function TicketsAndStatusSection({ ticketsPromise }) {
                     {selectedTicket.title}
                   </h3>
 
-                  <button onClick={() => handleCompleteBtn(selectedTicket)} className="bg-[#02A53B] w-full py-2 rounded-xl ">
+                  <button onClick={() => handleCompleteBtn(selectedTicket)} className="bg-[#02A53B] text-amber-50 w-full py-2 rounded-xl ">
                     Complete
                   </button>
                 </div>
@@ -107,13 +107,29 @@ export default function TicketsAndStatusSection({ ticketsPromise }) {
 
           {/* Resolved Section */}
           <div className="mt-10">
-            <h3 className="font-semibold text-gray-600 mb-2">
+            <h3 className="text-xl font-bold text-gray-700 mb-2">
               Resolved Task
             </h3>
 
-            <p className="text-sm text-gray-400">
-              No resolved tasks yet.
-            </p>
+            {
+              taskComplete.length === 0 ?
+                <p className="text-sm text-gray-400">
+                  No resolved tasks yet.
+                </p> :
+                <div className="grid grid-cols-1 gap-3">
+                  {taskComplete.map((singleTaskComplete) => (
+                    //card
+                    <div
+                      key={singleTaskComplete.id}
+                      className="bg-[#e0e7ff] rounded-xl cursor-pointer shadow-md hover:shadow-lg transition duration-300"
+                    >
+                      <h3 className="font-semibold text-gray-800 px-4 py-5">
+                        {singleTaskComplete.title}
+                      </h3>
+                    </div>
+                  ))}
+                </div>
+            }
           </div>
         </div>
 
