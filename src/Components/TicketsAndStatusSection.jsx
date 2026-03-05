@@ -1,7 +1,24 @@
 import { FaCalendarAlt } from "react-icons/fa";
-import tickets from "../../../public/tickets.json";
+import { use } from "react";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
-export default function TicketsAndStatusSection() {
+export default function TicketsAndStatusSection({ ticketsPromise }) {
+  const tickets = use(ticketsPromise);
+  const [selectedTicket, setSelectedTicket] = useState([]);
+  const [taskComplete, setTaskComplete] = useState([]);
+
+
+  const handleCompleteBtn = (selectedTicket) => {
+    setTaskComplete([...taskComplete, selectedTicket])
+    toast(`"${selectedTicket.title}" is Completed`)
+  }
+
+  const cardClicked = (ticket) => {
+    setSelectedTicket([...selectedTicket, ticket]);
+    toast('Card added in Task Status')
+  }
+
   return (
     <main className="container mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -14,9 +31,11 @@ export default function TicketsAndStatusSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {tickets.map((ticket) => (
+              //card
               <div
                 key={ticket.id}
-                className="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition duration-300"
+                onClick={() => cardClicked(ticket)}
+                className="bg-white rounded-xl cursor-pointer shadow-md p-5 hover:shadow-lg transition duration-300"
               >
                 <h3 className="font-semibold text-gray-800 mb-2">
                   {ticket.title}
@@ -47,23 +66,44 @@ export default function TicketsAndStatusSection() {
             Task Status
           </h2>
 
-          <p className="text-sm text-gray-400 mb-6">
-            Select a ticket to add to Task Status
-          </p>
+          {/* selected card */}
+          {selectedTicket.length === 0 ?
+            <p className="text-sm text-gray-400 mb-6">
+              Select a ticket to add to Task Status
+            </p>
+            :
+            <div className="grid grid-cols-1 gap-3">
+              {selectedTicket.map((selectedTicket) => (
+                //card
+                <div
+                  key={selectedTicket.id}
+                  className="bg-white rounded-xl cursor-pointer shadow-md p-5 hover:shadow-lg transition duration-300"
+                >
+                  <h3 className="font-semibold text-gray-800 mb-2">
+                    {selectedTicket.title}
+                  </h3>
+
+                  <button onClick={() => handleCompleteBtn(selectedTicket)} className="bg-[#02A53B] w-full py-2 rounded-xl ">
+                    Complete
+                  </button>
+                </div>
+              ))}
+            </div>
+          }
 
           {/* Decorative Image Top */}
-          <img
+          {/* <img
             src="/images/pattern1.png"
             alt="pattern"
             className="absolute -top-10 -right-10 w-40 opacity-10"
-          />
+          /> */}
 
           {/* Decorative Image Bottom */}
-          <img
+          {/* <img
             src="/images/pattern2.png"
             alt="pattern"
             className="absolute -bottom-10 -left-10 w-32 opacity-10"
-          />
+          /> */}
 
           {/* Resolved Section */}
           <div className="mt-10">
