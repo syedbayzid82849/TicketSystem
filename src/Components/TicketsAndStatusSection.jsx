@@ -90,21 +90,6 @@ export default function TicketsAndStatusSection({ ticketsPromise }) {
               ))}
             </div>
           }
-
-          {/* Decorative Image Top */}
-          {/* <img
-            src="/images/pattern1.png"
-            alt="pattern"
-            className="absolute -top-10 -right-10 w-40 opacity-10"
-          /> */}
-
-          {/* Decorative Image Bottom */}
-          {/* <img
-            src="/images/pattern2.png"
-            alt="pattern"
-            className="absolute -bottom-10 -left-10 w-32 opacity-10"
-          /> */}
-
           {/* Resolved Section */}
           <div className="mt-10">
             <h3 className="text-xl font-bold text-gray-700 mb-2">
@@ -121,7 +106,7 @@ export default function TicketsAndStatusSection({ ticketsPromise }) {
                     //card
                     <div
                       key={singleTaskComplete.id}
-                      className="bg-[#e0e7ff] rounded-xl cursor-pointer shadow-md hover:shadow-lg transition duration-300"
+                      className="bg-[#e0e7ff] rounded-xl shadow-md hover:shadow-lg transition duration-300"
                     >
                       <h3 className="font-semibold text-gray-800 px-4 py-5">
                         {singleTaskComplete.title}

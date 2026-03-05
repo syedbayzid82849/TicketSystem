@@ -3,6 +3,7 @@ import './App.css'
 import CountInProgress from './Components/CountInProgress'
 import Navbar from './Components/Navbar'
 import TicketsAndStatusSection from './Components/TicketsAndStatusSection'
+import Footer from './Components/Footer'
 
 function App() {
   const fetchTickets = async () => {
@@ -20,6 +21,7 @@ function App() {
       <Suspense fallback={loading}>
         <TicketsAndStatusSection ticketsPromise={ticketsPromise} />
       </Suspense>
+      <Footer />
     </div>
   )
 }
