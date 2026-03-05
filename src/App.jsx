@@ -4,8 +4,12 @@ import CountInProgress from './Components/CountInProgress'
 import Navbar from './Components/Navbar'
 import TicketsAndStatusSection from './Components/TicketsAndStatusSection'
 import Footer from './Components/Footer'
+import { useState } from 'react'
 
 function App() {
+  const [totalResolved, setTotalResolved] = useState(0)
+  const [totalInProgress, setTotalInProgress] = useState(0);
+  
   const fetchTickets = async () => {
     const res = await fetch("/tickets.json")
     return res.json()
@@ -17,9 +21,9 @@ function App() {
   return (
     <div>
       <Navbar />
-      <CountInProgress />
+      <CountInProgress totalInProgress={totalInProgress} totalResolved={totalResolved} />
       <Suspense fallback={loading}>
-        <TicketsAndStatusSection ticketsPromise={ticketsPromise} />
+        <TicketsAndStatusSection setTotalResolved={setTotalResolved} setTotalInProgress={setTotalInProgress} ticketsPromise={ticketsPromise} />
       </Suspense>
       <Footer />
     </div>

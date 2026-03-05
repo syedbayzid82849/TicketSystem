@@ -1,5 +1,6 @@
 
-function CountInProgress() {
+function CountInProgress({totalInProgress, totalResolved}) {
+
   return (
     <section className="container mx-auto m-20 flex justify-c gap-2">
       <div
@@ -19,7 +20,7 @@ function CountInProgress() {
         />
         <div className="mx-10 my-17">
           <h3 className="text-2xl flex justify-center">In Progress</h3>
-          <h1 className="text-6xl flex justify-center ">0</h1>
+          <h1 className="text-6xl flex justify-center ">{totalInProgress}</h1>
 
         </div>
       </div>
@@ -40,7 +41,7 @@ function CountInProgress() {
         />
         <div className="mx-10 my-17">
           <h3 className="text-2xl flex justify-center">Resolved</h3>
-          <h1 className="text-6xl flex justify-center ">0</h1>
+          <h1 className="text-6xl flex justify-center ">{totalResolved}</h1>
 
         </div>
       </div>
