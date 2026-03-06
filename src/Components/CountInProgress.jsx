@@ -8,13 +8,13 @@ function CountInProgress({ totalInProgress, totalResolved }) {
       >
         {/* left image */}
         <img
-          src="/src/assets/vector1.png"
+          src="/vector1.png"
           alt="decorative circle"
           className="absolute"
         />
         {/* right image */}
         <img
-          src="/src/assets/vector1.png"
+          src="/vector1.png"
           alt="decorative circle"
           className="absolute right-0 scale-x-[-1]"
         />
@@ -31,13 +31,13 @@ function CountInProgress({ totalInProgress, totalResolved }) {
       >
         {/* left image */}
         <img
-          src="/src/assets/vector1.png"
+          src="/vector1.png"
           alt="decorative circle"
           className="absolute"
         />
         {/* right image */}
         <img
-          src="/src/assets/vector1.png"
+          src="/vector1.png"
           alt="decorative circle"
           className="absolute right-0 scale-x-[-1]"
         />

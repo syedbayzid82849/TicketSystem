@@ -6,15 +6,16 @@ import TicketsAndStatusSection from './Components/TicketsAndStatusSection'
 import Footer from './Components/Footer'
 import { useState } from 'react'
 
+const fetchTickets = async () => {
+  const res = await fetch("/tickets.json")
+  return res.json()
+}
+const ticketsPromise = fetchTickets();
+
 function App() {
   const [totalResolved, setTotalResolved] = useState(0)
   const [totalInProgress, setTotalInProgress] = useState(0);
   
-  const fetchTickets = async () => {
-    const res = await fetch("/tickets.json")
-    return res.json()
-  }
-  const ticketsPromise = fetchTickets();
   const loading =
     <span className="flex mx-auto loading loading-spinner loading-xl"></span>
 
